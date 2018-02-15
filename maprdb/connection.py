@@ -24,7 +24,8 @@ def connect(mapr_home=None, **connection_info):
     return Connection.get_instance(conn_info=info)
 
 
-class Connection(object, metaclass=Singleton):
+class Connection(object):
+    __metaclass__ = Singleton
     """
     MapRDB Connection object.
     Represents both connection to JVM and MapRDB class.

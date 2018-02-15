@@ -98,7 +98,7 @@ def handle_java_exceptions(f):
             ret = f(*args, **kwargs)
         except jpype.JavaException as e:
             logger.debug(e.stacktrace())
-            raise MapRDBError(str(e)) from e
+            raise MapRDBError(str(e)) #from e
         except RuntimeError as e:
             if "No matching overloads found" in str(e):
                 raise TypeError(str(e))

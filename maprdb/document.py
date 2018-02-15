@@ -4,7 +4,7 @@ from maprdb.utils import python_to_java_cast, java_to_python_cast
 class Document(dict):
     def __init__(self, d, *args, **kwargs):
         dict_retained = d
-        super().__init__(dict_retained, *args, **kwargs)
+        super(Document, self).__init__(dict_retained, *args, **kwargs)
 
     @staticmethod
     def python_document_from_java(java_object):

@@ -197,11 +197,12 @@ class OperationsType(type):
             else:
                 raise e
 
-class Op(object, metaclass=OperationsType):
+class Op(object):
     """
     Operations enumeration. You can access required item like Op.GREATER_OR_EQUAL
     >> c = Condition(). \
             _is("dob", Op.GREATER_OR_EQUAL, datetime.date(year=1980, month=1, day=1))
     Wrapper for com.mapr.db.Condition$Op
     """
+    __metaclass__ = OperationsType
     pass
